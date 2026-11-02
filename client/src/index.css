@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #21372d;
+  --color-forest-2: #344e40;
+  --color-cream: #f2eee5;
+  --color-paper: #faf9f6;
+  --color-sage: #8a9a88;
+  --color-line: #e5e3dc;
+  --color-ink: #25352d;
+  --color-brand: #5b4cf5;
+  --color-brand-dark: #4638d6;
+  --color-brand-soft: #e6e4ff;
+  --color-mist: #f1f1fe;
+  --color-navy: #1d2040;
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+@layer base {
+  body { @apply bg-paper font-sans text-ink antialiased; }
+  h1, h2, h3 { @apply font-serif font-medium tracking-tight; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-bold transition disabled:opacity-50; }
+  .btn-dark { @apply bg-forest text-white hover:bg-forest-2; }
+  .btn-light { @apply bg-cream text-forest hover:bg-white; }
+  .btn-ghost { @apply border border-line bg-white text-ink hover:bg-cream; }
+  .input { @apply w-full border border-line bg-white px-3 py-3 text-sm outline-none focus:border-sage; }
+  .label { @apply flex flex-col gap-2 text-xs font-bold text-ink/70; }
+  .eyebrow { @apply text-[10px] font-bold tracking-[0.2em] text-ink/50 uppercase; }
+}
